@@ -1,4 +1,8 @@
 function encontrarIndices(arr) {
+    if (arr.length === 0) {
+        return { indiceMaior: undefined, indiceMenor: undefined };
+    }
+
     const indices = arr.reduce((acc, valor, indice) => {
         if (valor > arr[acc.indiceMaior]) {
             acc.indiceMaior = indice;
@@ -14,7 +18,4 @@ function encontrarIndices(arr) {
     return indices;
 }
 
-const array = [3, 7, 1, 12, 5];
-const indices = encontrarIndices(array);
-console.log("Índice do maior valor :", indices.indiceMaior);
-console.log("Índice do menor valor :", indices.indiceMenor);
+module.exports = encontrarIndices;
